@@ -1,0 +1,27 @@
+{
+  "name": "totuslink_web_crawler",
+  "version": "1.0.0",
+  "description": "Dedicated web crawler to test variety of crawling method",
+  "main": "index.js",
+  "dependencies": {
+    "cheerio": "^1.0.0-rc.9",
+    "got": "^11.8.2",
+    "json-2-csv": "^3.11.1",
+    "json2csv": "^5.0.6",
+    "jsonexport": "^3.2.0"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/totuslink/totuslink_web_crawler.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/totuslink/totuslink_web_crawler/issues"
+  },
+  "homepage": "https://github.com/totuslink/totuslink_web_crawler#readme"
+}

@@ -1,7 +1,6 @@
 const { URL } = require('url');
 const got = require('got')
 const cheerio = require('cheerio')
-const converter = require('json2csv');
 fs = require('fs');
 
 //import data from "./target.json"
@@ -20,20 +19,23 @@ const crawler = async () => {
     const header1 = $("h1").map((i, section) => {
       return $(section).text()
     });
-    title = header1.get(0);
+
+    const description = $("meta[name='descript']")
+
+    const title = header1.get(0);
+    
     headers = header1
     const temp = {
       "title": title,
       "url": url,
+      "description":description,
       "headers": headers
     }
     result.splice(0,0, temp)
-    fs.writeFile("hello", body, (err) => {
-      if (err) return console.log(err);
-    });
 
   }
 }
+
 
 crawler()
 
