@@ -24,7 +24,8 @@ const crawler = async () => {
 
     const description = $("meta[name='description']").attr("content")
     const author = $("meta[name='author']").attr("content")
-
+    const read_time = $("meta[name='twitter:data1']").attr("content")
+  
     const title = header1.get(0);
     delete header1[0];
     let headers = [];
@@ -35,6 +36,8 @@ const crawler = async () => {
       }
     } 
 
+    
+
     console.log(header1)
 
     const temp = {
@@ -42,7 +45,8 @@ const crawler = async () => {
       "url": url,
       "description":description,
       "headers": headers,
-      "author": author
+      "author": author,
+      "read_time": read_time
     }
     result.splice(0,0, temp)
 
