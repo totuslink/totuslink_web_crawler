@@ -22,6 +22,17 @@ const crawler = async () => {
       return $(section).text()
     });
 
+    let links = []
+
+    const link = $("a").map((i, section) => {
+      try {
+        const url = new URL(section.attribs.href);
+        links.splice(0, 0, url.href)
+      } catch(err){
+        return;
+      }
+    })
+
     const description = $("meta[name='description']").attr("content")
     const author = $("meta[name='author']").attr("content")
     const read_time = $("meta[name='twitter:data1']").attr("content")
@@ -36,17 +47,14 @@ const crawler = async () => {
       }
     } 
 
-    
-
-    console.log(header1)
-
     const temp = {
       "title": title,
       "url": url,
       "description":description,
       "headers": headers,
       "author": author,
-      "read_time": read_time
+      "read_time": read_time,
+      "links": links
     }
     result.splice(0,0, temp)
 
