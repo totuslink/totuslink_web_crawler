@@ -2,6 +2,8 @@ const { URL } = require('url');
 const got = require('got')
 const cheerio = require('cheerio')
 fs = require('fs');
+const jsonexport = require('jsonexport');
+
 
 //import data from "./target.json"
 
@@ -20,19 +22,36 @@ const crawler = async () => {
       return $(section).text()
     });
 
-    const description = $("meta[name='descript']")
+    const description = $("meta[name='description']").attr("content")
+    const author = $("meta[name='author']").attr("content")
 
     const title = header1.get(0);
+    delete header1[0];
+    let headers = [];
     
-    headers = header1
+    for ( const [key, value] of Object.entries(header1)){
+      if (typeof(value) === "string"){
+        headers.splice(0, 0, value)
+      }
+    } 
+
+    console.log(header1)
+
     const temp = {
       "title": title,
       "url": url,
       "description":description,
-      "headers": headers
+      "headers": headers,
+      "author": author
     }
     result.splice(0,0, temp)
 
+    console.log(result)
+
+    //jsonexport(result, function(err, csv){
+    //  if (err) return console.error(err);
+    //  console.log(csv);
+    //});
   }
 }
 
