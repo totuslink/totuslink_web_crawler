@@ -4,6 +4,7 @@
   "description": "Dedicated web crawler to test variety of crawling method",
   "main": "index.js",
   "dependencies": {
+    "article-parser": "^4.2.8",
     "cheerio": "^1.0.0-rc.9",
     "got": "^11.8.2",
     "json-2-csv": "^3.11.1",

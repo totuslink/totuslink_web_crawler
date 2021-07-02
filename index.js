@@ -7,7 +7,7 @@ const jsonexport = require('jsonexport');
 
 //import data from "./target.json"
 
-
+/*
 const targetURL = [
   "https://medium.com/@fullstackpho/aws-amplify-multi-auth-graphql-public-read-and-authenticated-create-update-delete-1bf5443b0ad1",
   "https://tengyuanchang.medium.com/%E7%AD%86%E8%A8%98-facebook-%E8%B3%87%E6%B7%B1%E7%94%A2%E5%93%81%E7%B6%93%E7%90%86%E8%81%8A%E8%81%8A%E7%94%A2%E5%93%81%E8%88%87%E5%89%B5%E6%96%B0-f4407c978fa",
@@ -32,7 +32,11 @@ const targetURL = [
   "https://medium.com/pinata/how-to-build-erc-721-nfts-with-ipfs-e76a21d8f914",
   "https://medium.com/pixelme-blog/in-2020-we-bought-out-our-investors-shares-we-gave-back-200k-from-a-loan-and-i-finally-bought-88cc8a610e28",
 ];
+*/
 
+const targetURL = [
+  "https://www.nitori-net.tw/Goods/ItemLabelList.aspx?LabelId=119"
+];
 
 
 ( async function(){
